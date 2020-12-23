@@ -1,0 +1,3402 @@
+<?xml version="1.0" ?>
+<configuration> 
+    <design
+        title = "Публичная кадастровая карта"
+        theme = "gray">
+        
+        <heading
+        type = "caption"
+        />
+    </design>
+    
+    <proxy
+        useProxy = "true"
+        proxyUrl = "proxy.php"
+        proxyConf = "http://ArcGISServer:8399/arcgis"
+    />
+    
+    <tasks>
+		
+		<geocoder
+		    url = "http://ArcGISServer:8399/arcgis/rest/services/Locator_Lots/GeocodeServer"
+			singleLineFieldName = "Single Line Input"
+		/>
+		
+	</tasks>
+		
+    <dijits>
+		<dijit type   = "toc"/>
+		
+		<dijit type="info"
+         	    html = "Слой &lt;b&gt;Административно-территориальное деление&lt;/b&gt; сформирован на основании данных Единого реестра административно-территориальных и территориальных единиц Республики Беларусь (Реестр АТЕ и ТЕ).
+                &lt;br&gt;На карте представлена информация о зарегистрированных и учтенных в Реестре АТЕ и ТЕ объектах административно-территориального деления Республики Беларусь (области, районы, сельсоветы, населенные пункты, районы в городе) и территориях специального режима использования (национальные парки, заказники, заповедники, памятники природы).
+                &lt;br&gt;Более подробная информация об объектах Реестра АТЕ и ТЕ доступна на &lt;a target='_blank' href='http://ate.nca.by'&gt;  сайте&lt;/a&gt;.
+                &lt;br&gt;Дистанционный доступ к информации Реестра АТЕ и ТЕ обеспечивается WEB-сервисами ОАИС.
+
+                &lt;p&gt;Слой &lt;b&gt;Адресная информация&lt;/b&gt; сформирован на основании данных Реестра адресов Республики Беларусь (Реестр адресов).
+                &lt;br&gt;На карте представлена информация об адресах объектов недвижимого имущества, содержащаяся в Реестре адресов.&lt;/p&gt;
+
+                &lt;p&gt;Слой &lt;b&gt;Земельные участки&lt;/b&gt; сформирован на основании данных Единого государственного регистра недвижимого имущества, прав на него и сделок с ним (ЕГРНИ) в части информации о зарегистрированных земельных участках, имеющих географическую привязку в системе координат 1963 г.
+                &lt;br&gt;На карте доступен поиск по кадастровому номеру объекта.
+                &lt;br&gt;Дополнительная информация Регистра доступна через &lt;a target='_blank' href='http://gzk.nca.by'&gt;  сайт&lt;/a&gt;.
+                &lt;br&gt;Дистанционный доступ к информации регистра обеспечивается WEB-сервисами.&lt;/p&gt;
+
+                &lt;p&gt;Слои &lt;b&gt;Кадастровая оценка. Зонирование территории&lt;/b&gt; и &lt;b&gt;Кадастровая оценка сельских населенных пунктов (условное местоположение)&lt;/b&gt;  сформированы на основании данных об оценочном зонировании, выполненном в рамках работ по кадастровой оценке 2015 - 2018 годов.
+                &lt;br&gt;Источник информации - Регистр стоимости земель, земельных участков государственного земельного кадастра (Регистр стоимости).
+                &lt;br&gt;Дополнительная информация Регистра стоимости доступна на &lt;a target='_blank' href='http://vl.nca.by/'&gt;  сайте&lt;/a&gt;.
+				
+				&lt;p&gt;Слой &lt;b&gt;Элементы улично-дорожной сети&lt;/b&gt; содержит информацию о пространственном положении элементов улично-дорожной сети на территорию населенных пунктов из Реестра наименований улиц и дорог Реестра адресов Республики Беларусь. Также получить сведения об элементах улично-дорожной сети можно на &lt;a target='_blank' href='http://gzk.nca.by/streets.php'&gt;  сайте&lt;/a&gt;.&lt;/p&gt;
+
+				&lt;p&gt;Слой &lt;b&gt;Автозаправочные станции&lt;/b&gt; содержит информацию о местоположении, адресе, графике работы, типе топлива/типе станции и контактном номере телефона автозаправочных станций и станций зарядки электромобилей Республики Беларусь.
+
+				&lt;p&gt;Слой &lt;b&gt;Границы зон обслуживания организаций и учреждений &lt;/b&gt; является справочным и содержит информацию о закрепленных зонах обслуживания организаций и учреждений г. Жлобина и Фрунзенского района г. Минска.&lt;/p&gt;
+
+				&lt;p&gt;Слой &lt;b&gt;Дуга Струве&lt;/b&gt; отображает информацию о цепи триангуляционных пунктов, заложенных в период 1816-1855 гг. для изучения формы Земли и уточнения данных о её размерах. Дуга проходит по территории 10 стран, а её протяженность составляет 2 820 км. Геодезическая дуга Струве является одним из 4-х объектов всемирного наследия ЮНЕСКО, расположенных на территории Беларуси (включена в список в июле 2005 года). 
+				Информация о местонахождении пунктов нанесена на карту на основе материалов книги В.В. Мкртычяна &#171;Геодезическая дуга Струве: путь к всемирному признанию&#187;.&lt;/p&gt;
+
+                &lt;p&gt;Слой &lt;b&gt;Зоны запретные/опасные/запрещённые для использования авиамоделей&lt;/b&gt; состоит из трех подслоев.
+				&lt;br&gt;Подслои &lt;b&gt;Запретные зоны &lt;/b&gt; и &lt;b&gt;Опасные зоны &lt;/b&gt;  сформированы на основании постановления Министерства обороны Республики Беларусь от 13 ноября 2017 г. № 21&#171;Об утверждении Инструкции по использованию воздушного пространства Минского района полетной информации&#187;.
+                &lt;br&gt;Подслой &lt;b&gt;Зоны, запрещённые для использования авиамоделей&lt;/b&gt; сформирован на основании постановления Министерства обороны Республики Беларусь от 22 августа 2016 г. № 18 &#171;Об установлении перечня зон, запрещенных для использования авиамоделей в Республике Беларусь&#187; (в редакции постановления Министерства обороны Республики Беларусь от 1 июня 2020 г. №14).
+
+				&lt;p&gt;Слой &lt;b&gt;Избирательные округа по выборам депутатов Палаты представителей&lt;/b&gt; отображает границы избирательных округов и местоположение окружных избирательных комиссий при проведении выборов депутатов
+				Палаты представителей Национального собрания Республики Беларусь седьмого созыва, а также содержит текстовое описание округов.
+				&lt;br&gt;Более подробная информация о данной избирательной кампании размещена на сайте Центральной комиссии Республики Беларусь по выборам и проведению республиканских референдумов в
+				разделе &lt;a target='_blank' href='http://rec.gov.by/ru/vybory-2019'&gt;  Выборы 2019&lt;/a&gt;.&lt;/p&gt;
+
+				&lt;p&gt;Слой &lt;b&gt;Исполнительные комитеты&lt;/b&gt; отображает местонахождение местных (областных, районных, городских, сельских) исполнительных комитетов. Содержит информацию о наименованиях и адресах, ссылки на сайты или адреса электронной почты (при наличии). Источники информации - Единый реестр административно-территориальных и территориальных единиц Республики Беларусь; официальные сайты исполнительных комитетов.&lt;/p&gt;
+
+				&lt;p&gt;Слой &lt;b&gt;Капитальные строения г. Минска&lt;/b&gt; содержит сведения о типе, назначении, номере строения, номере корпуса, этажности и материале стен капитальных строений г. Минска.
+				&lt;br&gt;Источник информации - ТУ Мингорисполкома.&lt;/p&gt;
+
+				&lt;p&gt;Слой &lt;b&gt;Места для выгула собак&lt;/b&gt; содержит информацию о территориях Фрунзенского района г. Минска, определенных местами для выгула собак.
+				&lt;br&gt;Источник информации - решение администрации Фрунзенского района г. Минска от 20.08.2019 №781 &#171;О мерах по упорядочению содержания домашних собак, кошек и отлова безнадзорных животных на территории Фрунзенского района г. Минска&#187;&lt;/p&gt;
+
+				&lt;p&gt;Слой &lt;b&gt;Организации системы Госкомимущества&lt;/b&gt; отображает месторасположение организаций, подчиненных Государственному комитету по имуществу Республики Беларусь и границы территорий обслуживания структурных подразделений
+				территориальных организаций по государственной регистрации (п. 3 Приказа Государственного комитета по имуществу Республики Беларусь от 29.04.2011 №131 &#171;Об утверждении Инструкции о кадастровых номерах земельных учстков&#187;).
+
+				&lt;p&gt;Слой &lt;b&gt;Памятники Великой Отечественной войны&lt;/b&gt; содержит информацию о местоположении на территории Республики Беларусь памятников, посвященных подвигу советского народа
+				в Великой Отечественной войне и увековечивающих память об его героях. Слой приурочен к празднованию  75-й годовщины освобождения Беларуси от немецко-фашистских захватчиков и Победы в Великой Отечественной войне.
+
+				&lt;p&gt;Слой &lt;b&gt;Почтовые индексы&lt;/b&gt; сформирован на основании открытых данных с &lt;a target='_blank' href='https://www.belpost.by/'&gt;  сайта РУП &#171;Белпочта&#187;&lt;/a&gt;, а также информации об адресах объектов недвижимости реестра адресов Республики Беларусь.
+				Дополнительная информация о отделениях почтовой связи и почтовых индексах доступна через &lt;a target='_blank' href='https://www.belpost.by/'&gt;  сайт РУП &#171;Белпочта&#187;&lt;/a&gt;.
+
+				&lt;p&gt;Слой &lt;b&gt;Пределы пограничной зоны и полосы&lt;/b&gt; сформирован на основании решений:
+				Витебского областного исполнительного комитета от&#160;21.08.2014 №&#160;499;
+				Гродненского областного исполнительного комитета от&#160;15.09.2014 №&#160;496;
+				Брестского областного исполнительного комитета от&#160;05.01.2016 №&#160;3;
+				Гомельского областного исполнительного комитета от&#160;07.10.2014 №&#160;932.
+				На карте представлена информация о пределах прохождения пограничной зоны и полосы Республики Беларусь, установленных решениями соответствующих областных исполнительных комитетов.
+
+				&lt;p&gt;Слой &lt;b&gt;Проект карты благоустройства Центрального района г. Минска&lt;/b&gt; является справочным и содержит информацию об элементах благоустройства на часть территории Центрального района г. Минска.
+				Информация, полученная в рамках пилотного проекта с Администрацией Центрального района г.Минска, предоставлена организациями, подведомственными Администрации Центрального района г. Минска.
+
+				&lt;p&gt;Слой &lt;b&gt;Родники&lt;/b&gt; подготовлен в &lt;b&gt;год Малой Родины&lt;/b&gt;. Отображены сведения о родниках, криницах и других водных источниках, имеющих историческое, географическое, природное, духовное, экологическое и другое значение для жителей и гостей нашей страны.
+				&lt;br&gt;Источник информации - территориальные организации по государственной регистрации недвижимого имущества, прав на него и сделок с ним; &lt;a target='_blank' href='http://www.cricuwr.by/'&gt;  РУП &#171;Центральный научно-исследовательский институт комплексного использования водных ресурсов&#187;&lt;/a&gt;.&lt;/p&gt;
+
+				&lt;p&gt;Слой &lt;b&gt;Службы субсидирования&lt;/b&gt; содержит сведения о наименовании, основаниях делегирования полномочий, ссылки на сайты (при наличии) и местонахождении служб субсидирования жилищно-коммунальных услуг, уполномоченных местными исполнительными и распорядительными органами.
+				&lt;br&gt;Подробнее с порядком предоставления субсидий на жилищно-коммунальные услуги можно ознакомиться в Указе Президента Республики Беларусь от &#160;29.08.2016 №&#160;322 &#171;О предоставлении безналичных жилищных субсидий&#187;.&lt;/p&gt;
+				
+				&lt;p&gt;Слой &lt;b&gt;Спутниковая система точного позиционирования&lt;/b&gt; отображает расположение постоянно действующих пунктов на территории Республики Беларусь.
+                &lt;br&gt;Назначение: предоставление единого непрерывного высокоточного навигационного поля сантиметровой точности в режиме реального времени с возможностью удаленного доступа к данным.
+				&lt;br&gt;Область применения: геодезия, картография, землеустройство, кадастр, сельское хозяйство, оборона и безопасность, навигация на территории Республики Беларусь, а также любые приложения требующие высокоточного позиционирования.
+				&lt;br&gt;Источник информации – государственное предприятие &#171;Белгеодезия&#187;.
+
+                &lt;p&gt;&lt;b&gt;Исключительные права на информацию из реестров и регистров государственного земельного кадастра принадлежат Государственному
+         	     комитету по имуществу Республики Беларусь&lt;/b&gt;&lt;/p&gt;"/>
+
+		<dijit type="feedback"
+         	    html = "&lt;p&gt;Проект «В целях повышения качества оказываемых услуг, а также оперативного исправления и обновления данных» ГУП «Национальное кадастровое агентство» открыто для обращений пользователей.
+         	    Ждем ваших замечаний, предложений и пожеланий (&lt;a target='_blank' href='http://nca.by/feedback_map/index.php'&gt;написать&lt;/a&gt;)&lt;/p&gt;"
+		/>
+
+		<dijit type="agreement"
+         	    html = "&lt;p&gt;&lt;b&gt;Исключительные права на информацию из реестров и регистров государственного земельного кадастра принадлежат Государственному
+         	     комитету по имуществу Республики Беларусь&lt;/b&gt;&lt;/p&gt;
+         	    &lt;p&gt;C лицензионным соглашением можно ознакомиться &lt;a target='_blank' href='http://map.nca.by/index.html'&gt;здесь&lt;/a&gt;&lt;/p&gt;"/>
+
+		<dijit type="geocoder" />
+			   
+		<dijit type="measure"
+			   snappingLayerIDs = ""/>
+			   
+		<dijit type     = "layers"
+			   grouping = "false"		
+		/>
+		
+		<dijit type="scalebar"/>
+		
+		<dijit type="basemaps" 
+		       arcgismaps = "true"
+			   googlemaps="true"/>
+
+		<dijit type="overview"/>	
+
+		<dijit type="identify"
+			   tolerance="6"/>
+			   
+		<dijit  type = "navigation"
+			    slider = "true"
+				sliderStyle = "large"
+				homeButton = "true"
+				locateButton = "true" />			  	
+			   		
+    </dijits>
+   
+   <!-- Конфигурация карты -->
+    <map>
+		
+		<options
+			wkid               = "4326"
+			slider             = "small"
+			homeButton         = "true"
+			logoVisible        = "false"
+			attributionVisible = "true"
+			basemap            = "osm">
+			
+			<extent
+				xmin = "22.700072765545148"
+				ymin = "50.40302278100002"
+				xmax = "33.25625467299488"
+				ymax = "57.03110502661899"
+			/>			
+		</options>
+		
+		<basemaps>
+
+			<basemap
+				title = "Без подложки"
+				image = "images/basemaps/blank.jpg"
+				id    = "blank">
+
+				<layers>
+					<layer
+						type      = "tiled"
+						url       = "http://ArcGISServer:8399/arcgis/rest/services/BaseBlankMap/MapServer"
+						id        = "balnk"
+						title     = "Без подложки"
+						opacity   = "1"
+						token     = ""
+					/>
+				</layers>
+
+			</basemap>
+		</basemaps>
+
+		<mapLayers>
+
+
+			<layer
+				type = "dynamic"
+				id = "1"
+				title = "Административно-территориальное деление"
+				url = "http://ArcGISServer:8399/arcgis/rest/services/ATE_rus_bel/MapServer"
+				visible = "false"
+				toc  = "true"
+				tocSlider = "true"
+				opacity  = "0.7"
+                maxScale  = "14"
+				token = ""
+				dateFilter = "true">
+
+				<sublayers>
+					<sublayer
+						id = "0"
+						title = "Области"
+						visible = "true">
+
+						<popup
+							title = "&lt;p&gt;Области
+
+							&lt;br&gt;&lt;br&gt;&lt;em style='color:grey;'&gt;Дополнительную информацию можно получить на &lt;em&gt;
+							&lt;a target='_blank' href='http://nca.by/rus/geosystem/partition/'&gt;  сайте&lt;/a&gt;&lt;/p&gt;">
+
+
+                            <fields>
+                                <field
+                                        label = "&lt;p&gt;&lt;em style='color:grey;font-weight:bold;'&gt;на русском языке"
+                                        name = "не существует"
+                                />
+
+                                <field
+                                        label = "Код СОАТО"
+                                        name = "SOATO"
+                                        />
+
+                                <field
+                                        label = "Категория АТЕ (ТЕ)"
+                                        name = "NAME"
+                                        />
+
+								<field
+										label = "Наименование АТЕ (ТЕ)"
+										name = "NAMEOBJECT"
+										/>
+
+								<field
+										label = "Население, чел. (2019)"
+										name = "POPULAR"
+										/>
+
+                                <field
+                                        label = "&lt;p&gt;&lt;em style='color:grey;font-weight:bold;'&gt;на белорусском языке"
+                                        name = "не существует"
+                                />
+
+								<field
+										label = "Код СААТА"
+										name = "SOATO"
+										/>
+
+								<field
+										label = "Катэгорыя АТА (ТА)"
+										name = "NAMEBY"
+										/>
+
+								<field
+                                        label = "Назва АТА (ТА)"
+                                        name = "NAMEOBJBEL"
+                                        />
+
+								<field
+										label = "Насельніцтва, чал. (2019)"
+										name = "POPULAR"
+										/>
+							</fields>
+
+						</popup>
+
+					</sublayer>
+					<sublayer
+						id = "1"
+						title = "Районы"
+						visible = "true">
+
+						<popup
+							title = "&lt;p&gt;Районы
+
+							&lt;br&gt;&lt;br&gt;&lt;em style='color:grey;'&gt;Дополнительную информацию можно получить на &lt;em&gt;
+							&lt;a target='_blank' href='http://nca.by/rus/geosystem/partition/'&gt;  сайте&lt;/a&gt;&lt;/p&gt;">
+
+
+                            <fields>
+                                <field
+                                        label = "&lt;p&gt;&lt;em style='color:grey;font-weight:bold;'&gt;на русском языке"
+                                        name = "не существует"
+                                />
+
+                                <field
+                                        label = "Код СОАТО"
+                                        name = "SOATO"
+                                        />
+
+                                <field
+                                        label = "Область"
+                                        name = "REGION"
+                                        />
+
+                                <field
+                                        label = "Категория АТЕ (ТЕ)"
+                                        name = "NAME"
+                                        />
+
+								<field
+										label = "Наименование АТЕ (ТЕ)"
+										name = "NAMEOBJECT"
+										/>
+
+								<field
+										label = "Население, чел. (2019)"
+										name = "POPULAR"
+										/>
+
+                                <field
+                                        label = "&lt;p&gt;&lt;em style='color:grey;font-weight:bold;'&gt;на белорусском языке"
+                                        name = "не существует"
+                                />
+
+								<field
+										label = "Код СААТА"
+										name = "SOATO"
+										/>
+
+                                <field
+                                        label = "Вобласть"
+                                        name = "REGIONBY"
+                                        />
+
+								<field
+										label = "Катэгорыя АТА (ТА)"
+										name = "NAMEBY"
+										/>
+
+								<field
+                                        label = "Назва АТА (ТА)"
+                                        name = "NAMEOBJBEL"
+                                        />
+
+								<field
+										label = "Насельніцтва, чал. (2019)"
+										name = "POPULAR"
+										/>
+							</fields>
+
+						</popup>
+
+					</sublayer>
+					<sublayer
+						id = "2"
+						title = "Территории специального режима использования"
+						visible = "true">
+
+						<popup
+							title = "&lt;p&gt;Территории специального режима использования
+
+							&lt;br&gt;&lt;br&gt;&lt;em style='color:grey;'&gt;Дополнительную информацию можно получить на &lt;em&gt;
+							&lt;a target='_blank' href='http://nca.by/rus/geosystem/partition/'&gt;  сайте&lt;/a&gt;&lt;/p&gt;">
+
+
+                            <fields>
+                                <field
+                                        label = "&lt;p&gt;&lt;em style='color:grey;font-weight:bold;'&gt;на русском языке"
+                                        name = "не существует"
+                                />
+
+                                <field
+                                        label = "Код СОАТО"
+                                        name = "SOATO"
+                                        />
+
+                                <field
+                                        label = "Область"
+                                        name = "REGION"
+                                        />
+
+                                <field
+                                        label = "Район"
+                                        name = "DISTRICT"
+                                        />
+
+                                <field
+                                        label = "Категория АТЕ (ТЕ)"
+                                        name = "NAME"
+                                        />
+
+								<field
+										label = "Наименование АТЕ (ТЕ)"
+										name = "NAMEOBJECT"
+										/>
+
+                                <field
+                                        label = "&lt;p&gt;&lt;em style='color:grey;font-weight:bold;'&gt;на белорусском языке"
+                                        name = "не существует"
+                                />
+
+								<field
+										label = "Код СААТА"
+										name = "SOATO"
+										/>
+
+                                <field
+                                        label = "Вобласть"
+                                        name = "REGIONBY"
+                                        />
+
+                                <field
+                                        label = "Раён"
+                                        name = "DISTRBY"
+                                        />
+
+								<field
+										label = "Катэгорыя АТА (ТА)"
+										name = "NAMEBY"
+										/>
+
+								<field
+                                        label = "Назва АТА (ТА)*"
+                                        name = "NAMEOBJBEL"
+                                        />
+								<field
+										label = "&lt;p&gt;&lt;em style='color:black;'&gt;*при наличии данных в реестре"
+										name = "не существует"
+								/>
+
+							</fields>
+
+						</popup>
+
+					</sublayer>
+					<sublayer
+						id = "3"
+						title = "Сельсоветы"
+						visible = "true">
+
+						<popup
+							title = "&lt;p&gt;Сельсоветы
+
+							&lt;br&gt;&lt;br&gt;&lt;em style='color:grey;'&gt;Дополнительную информацию можно получить на &lt;em&gt;
+							&lt;a target='_blank' href='http://nca.by/rus/geosystem/partition/'&gt;  сайте&lt;/a&gt;&lt;/p&gt;">
+
+
+                            <fields>
+                                <field
+                                        label = "&lt;p&gt;&lt;em style='color:grey;font-weight:bold;'&gt;на русском языке"
+                                        name = "не существует"
+                                />
+
+                                <field
+                                        label = "Код СОАТО"
+                                        name = "SOATO"
+                                        />
+
+                                <field
+                                        label = "Область"
+                                        name = "REGION"
+                                        />
+
+                                <field
+                                        label = "Район"
+                                        name = "DISTRICT"
+                                        />
+
+                                <field
+                                        label = "Категория АТЕ (ТЕ)"
+                                        name = "NAME"
+                                        />
+
+								<field
+										label = "Наименование АТЕ (ТЕ)"
+										name = "NAMEOBJECT"
+										/>
+
+								<field
+										label = "Население, чел. (2019)"
+										name = "POPULAR"
+										/>
+
+                                <field
+                                        label = "&lt;p&gt;&lt;em style='color:grey;font-weight:bold;'&gt;на белорусском языке"
+                                        name = "не существует"
+                                />
+
+								<field
+										label = "Код СААТА"
+										name = "SOATO"
+										/>
+
+                                <field
+                                        label = "Вобласть"
+                                        name = "REGIONBY"
+                                        />
+
+                                <field
+                                        label = "Раён"
+                                        name = "DISTRBY"
+                                        />
+
+								<field
+										label = "Катэгорыя АТА (ТА)"
+										name = "NAMEBY"
+										/>
+
+								<field
+                                        label = "Назва АТА (ТА)"
+                                        name = "NAMEOBJBEL"
+                                        />
+
+								<field
+										label = "Насельніцтва, чал. (2019)"
+										name = "POPULAR"
+										/>
+							</fields>
+
+						</popup>
+
+					</sublayer>
+					<sublayer
+						id = "4"
+						title = "Внутригородские районы"
+						visible = "true">
+
+						<popup
+							title = "&lt;p&gt;Внутригородские районы
+
+							&lt;br&gt;&lt;br&gt;&lt;em style='color:grey;'&gt;Дополнительную информацию можно получить на &lt;em&gt;
+							&lt;a target='_blank' href='http://nca.by/rus/geosystem/partition/'&gt;  сайте&lt;/a&gt;&lt;/p&gt;">
+
+
+                            <fields>
+                                <field
+                                        label = "&lt;p&gt;&lt;em style='color:grey;font-weight:bold;'&gt;на русском языке"
+                                        name = "не существует"
+                                />
+
+                                <field
+                                        label = "Код СОАТО"
+                                        name = "SOATO"
+                                        />
+
+                                <field
+                                        label = "Область"
+                                        name = "REGION"
+                                        />
+
+                                <field
+                                        label = "Категория АТЕ (ТЕ)"
+                                        name = "NAME"
+                                        />
+
+								<field
+										label = "Наименование АТЕ (ТЕ)"
+										name = "NAMEOBJECT"
+										/>
+
+								<field
+										label = "Население, чел. (2019)"
+										name = "POPULAR"
+										/>
+
+                                <field
+                                        label = "&lt;p&gt;&lt;em style='color:grey;font-weight:bold;'&gt;на белорусском языке"
+                                        name = "не существует"
+                                />
+
+								<field
+										label = "Код СААТА"
+										name = "SOATO"
+										/>
+
+                                <field
+                                        label = "Вобласть"
+                                        name = "REGIONBY"
+                                        />
+
+								<field
+										label = "Катэгорыя АТА (ТА)"
+										name = "NAMEBY"
+										/>
+
+								<field
+                                        label = "Назва АТА (ТА)*"
+                                        name = "NAMEOBJBEL"
+                                        />
+
+								<field
+										label = "Насельніцтва, чал. (2019)"
+										name = "POPULAR"
+										/>
+
+								<field
+										label = "&lt;p&gt;&lt;em style='color:black;'&gt;*при наличии данных в реестре"
+										name = "не существует"
+								/>
+
+							</fields>
+
+						</popup>
+
+					</sublayer>
+					<sublayer
+						id = "5"
+						title = "Населенные пункты"
+						visible = "true">
+
+						<popup
+							title = "&lt;p&gt;Населенные пункты
+
+							&lt;br&gt;&lt;br&gt;&lt;em style='color:grey;'&gt;Дополнительную информацию можно получить на &lt;em&gt;
+							&lt;a target='_blank' href='http://nca.by/rus/geosystem/partition/'&gt;  сайте&lt;/a&gt;&lt;/p&gt;">
+
+
+                            <fields>
+                                <field
+                                        label = "&lt;p&gt;&lt;em style='color:grey;font-weight:bold;'&gt;на русском языке"
+                                        name = "не существует"
+                                />
+
+                                <field
+                                        label = "Код СОАТО"
+                                        name = "SOATO"
+                                        />
+
+                                <field
+                                        label = "Область"
+                                        name = "REGION"
+                                        />
+
+                                <field
+                                        label = "Район"
+                                        name = "DISTRICT"
+                                        />
+
+                                <field
+                                        label = "Сельсовет"
+                                        name = "SELSOVET"
+                                        />
+
+                                <field
+                                        label = "Категория АТЕ (ТЕ)"
+                                        name = "NAME"
+                                        />
+
+								<field
+										label = "Наименование АТЕ (ТЕ)"
+										name = "NAMEOBJECT"
+										/>
+
+								<field
+										label = "Население, чел. (2019)"
+										name = "POPULAR"
+										/>
+
+                                <field
+                                        label = "&lt;p&gt;&lt;em style='color:grey;font-weight:bold;'&gt;на белорусском языке"
+                                        name = "не существует"
+                                />
+
+								<field
+										label = "Код СААТА"
+										name = "SOATO"
+										/>
+
+                                <field
+                                        label = "Вобласть"
+                                        name = "REGIONBY"
+                                        />
+
+                                <field
+                                        label = "Раён"
+                                        name = "DISTRBY"
+                                        />
+
+                                <field
+                                        label = "Сельсавет"
+                                        name = "SELSOVBY"
+                                        />
+
+								<field
+										label = "Катэгорыя АТА (ТА)"
+										name = "NAMEBY"
+										/>
+
+								<field
+                                        label = "Назва АТА (ТА)"
+                                        name = "NAMEOBJBEL"
+                                        />
+
+								<field
+										label = "Насельніцтва, чал. (2019)"
+										name = "POPULAR"
+										/>
+							</fields>
+
+						</popup>
+
+					</sublayer>
+				</sublayers>
+			</layer>
+
+            <layer
+				type = "dynamic"
+				id = "2"
+				title = "Земельные участки"
+				url = "http://ArcGISServer:8399/arcgis/rest/services/NEW_LOTS/MapServer"
+				visible = "false"
+				toc  = "true"
+				tocSlider = "true"
+				opacity  = "1"
+				token = ""
+                maxScale  = "14"
+				dateFilter = "true">
+
+				<sublayers>
+					<sublayer
+						id = "0"
+						title = "Земельные участки"
+						visible = "true">
+
+						<popup
+							title = "&lt;p&gt;Земельный участок
+
+							&lt;br&gt;&lt;br&gt;&lt;em style='color:grey;'&gt;Дополнительную информацию можно получить на &lt;em&gt;
+							&lt;a target='_blank' href='http://gzk.nca.by/'&gt; сайте&lt;/a&gt;&lt;/p&gt;">
+
+							<fields>
+								<field
+									label = "Адрес"
+									name = "ADRESS"
+								/>
+
+								<field
+									label = "Кадастровый номер"
+									name = "CAD_NUM"
+								/>
+
+								<field
+									label = "Площадь, га"
+									name = "SQ"
+								/>
+
+								<field
+									label = "Целевое назначение"
+									name = "PURPOSE2"
+								/>
+
+								<field
+									label = "Организация, выполнявшая работы по установлению границ"
+									name = "ORGNAME"
+								/>
+
+								<field
+									label = "Наименование вида статуса границ земельных участков"
+									name = "BNDTYPENM"
+								/>
+
+								<field
+									label = "Дата внесения изменения в вид статуса границ земельных участков"
+									name = "date_norma"
+									visible = "true"
+									dateFormat = "dayShortMonthYear"
+								/>
+
+							</fields>
+						</popup>
+
+					</sublayer>
+				</sublayers>
+			</layer>
+
+			<layer
+				type = "dynamic"
+				id = "3"
+				title = "Адресная информация"
+				url = "http://ArcGISServer:8399/arcgis/rest/services/Addr_rus_bel/MapServer"
+				visible = "false"
+				toc  = "true"
+				tocSlider = "true"
+				opacity  = "0.7"
+				token = ""
+                maxScale  = "14"
+				dateFilter = "true">
+
+				<sublayers>
+					<sublayer
+						id = "0"
+						title = "Адресная информация"
+						visible = "true">
+
+						<popup
+							title = "&lt;p&gt;Адресная информация
+
+							&lt;br&gt;&lt;br&gt;&lt;em style='color:grey;'&gt;Дополнительную информацию можно получить на &lt;em&gt;
+							&lt;a target='_blank' href='http://nca.by/rus/geosystem/radr/'&gt; сайте&lt;/a&gt;&lt;/p&gt;">
+
+							<fields>
+
+								<field
+									label = "Вид объекта недвижимого имущества"
+									name = "IM_TYPE"
+								/>
+
+								<field
+									label = "Область"
+									name = "NAMEREGION"
+								/>
+
+								<field
+									label = "Район"
+									name = "NAMEDISTR"
+								/>
+
+								<field
+									label = "Сельсовет"
+									name = "SSDISTR"
+								/>
+
+								<field
+									label = "Населенный пункт"
+									name = "NAMEOBJECT"
+								/>
+
+								<field
+									label = "Населенный пункт (бел.)"
+									name = "NAMEOBJBEL"
+								/>
+
+								<field
+									label = "Наименование ЭУДС"
+									name = "ELEMENTNAM"
+								/>
+
+								<field
+									label = "Наименование ЭУДС (бел.)*"
+									name = "EVANAMEBEL"
+								/>
+
+
+								<field
+									label = "Номер строения"
+									name = "N_HOUSE_LO"
+								/>
+
+								<field
+									label = "Номер корпуса"
+									name = "N_CORP_LO"
+								/>
+
+								<field
+									label = "Индекс номера"
+									name = "IND_HOUSE"
+								/>
+
+								<field
+									label = "Расстояние в километрах от начала автомобильной дороги"
+									name = "KM_LONG"
+								/>
+
+								<field
+									label = "Дополнительные сведения"
+									name = "REMARK"
+								/>
+
+								<field
+										label = "&lt;p&gt;&lt;em style='color:black;'&gt;*при наличии данных в реестре"
+										name = "не существует"
+								/>
+
+							</fields>
+                        </popup>
+					</sublayer>
+				</sublayers>
+			</layer>
+
+            <layer
+				type = "dynamic"
+				id = "4"
+				title = "Элементы улично-дорожной сети"
+				url = "http://ArcGISServer:8399/arcgis/rest/services/EVA_rus_bel/MapServer"
+				visible = "false"
+				toc  = "true"
+				tocSlider = "true"
+				opacity  = "0.8"
+				token = ""
+                maxScale  = "14"
+				dateFilter = "true">
+
+				<sublayers>
+					<sublayer
+						id = "0"
+						title = "Элементы улично-дорожной сети"
+						visible = "true">
+
+						<popup
+								title = "&lt;p&gt;Элемент улично-дорожной сети (ЭУДС)
+
+							&lt;br&gt;&lt;br&gt;&lt;em style='color:grey;'&gt;Дополнительную информацию можно получить на &lt;em&gt;
+							&lt;a target='_blank' href='http://nca.by/rus/geosystem/eva/'&gt;  сайте&lt;/a&gt;&lt;/p&gt;">
+
+							<fields>
+
+								<field
+										label = "&lt;p&gt;&lt;em style='color:grey;font-weight:bold;'&gt;на русском языке"
+										name = "не существует"
+								/>
+
+								<field
+										label = "Область"
+										name = "region"
+								/>
+
+								<field
+										label = "Район"
+										name = "district"
+								/>
+
+								<field
+										label = "Сельсовет"
+										name = "village"
+								/>
+
+								<field
+										label = "Населённый пункт"
+										name = "NP_RUS"
+								/>
+
+								<field
+										label = "Наименование ЭУДС"
+										name = "EVA_RUS"
+								/>
+
+
+								<field
+										label = "&lt;p&gt;&lt;em style='color:grey;font-weight:bold;'&gt;на белорусском языке"
+										name = "не существует"
+								/>
+
+								<field
+										label = "Вобласць"
+										name = "region_bel"
+								/>
+
+								<field
+										label = "Раён"
+										name = "district_bel"
+								/>
+
+								<field
+										label = "Сельсавет"
+										name = "village_bel"
+								/>
+
+								<field
+										label = "Населены пункт"
+										name = "NP_BEL"
+								/>
+
+								<field
+										label = "Найменне ЭВДС*"
+										name = "EVA_BEL"
+								/>
+
+								<field
+										label = "&lt;em style='color:white;'&gt;*"
+										name = " "
+								/>
+
+								<field
+										label = "&lt;em style='color:grey;font-weight:bold;'&gt;Краткая информация*"
+										name = "shortInfo"
+								/>
+
+								<field
+										label = "&lt;p&gt;&lt;em style='color:black;'&gt;*при наличии данных в реестре"
+										name = "не существует"
+								/>
+
+							</fields>
+						</popup>
+
+					</sublayer>
+				</sublayers>
+			</layer>
+
+			<layer
+				type = "dynamic"
+				id = "5"
+				title = "Памятники&lt;br&gt;Великой Отечественной войны"
+				url = "http://ArcGISServer:8399/arcgis/rest/services/WOW_2020/MapServer"
+				visible = "false"
+				toc  = "true"
+				tocSlider = "true"
+				opacity  = "1"
+				token = ""
+                maxScale  = "14"
+				dateFilter = "true">
+
+				<sublayers>
+					<sublayer
+						id = "0"
+						title = "Памятники Великой Отечественной войны"
+						visible = "true">
+
+						<popup
+							title = "&lt;p&gt;Памятники&lt;br&gt;Великой Отечественной войны&lt;/p&gt;">
+
+							<fields>
+
+								<field
+									label = "Категория"
+									name = "Type"
+								/>
+
+								<field
+									label = "Наименование"
+									name = "Name"
+								/>
+
+								<field
+									label = "Описание"
+									name = "State"
+								/>
+
+								<field
+									label = "Фотография"
+									name = "Photo"
+								/>
+
+								<field
+									label = "Источник"
+									name = "Source"
+								/>
+
+								<field
+									label = " "
+									name = "Link"
+								/>
+
+							</fields>
+                        </popup>
+					</sublayer>
+				</sublayers>
+			</layer>
+
+            <layer
+				type = "dynamic"
+				id = "6"
+				title = "Почтовые индексы"
+				url = "http://ArcGISServer:8399/arcgis/rest/services/POST_INDEXES/MapServer"
+				visible = "false"
+				toc  = "true"
+				tocSlider = "true"
+				opacity  = "0.9"
+				token = ""
+                maxScale  = "14"
+				dateFilter = "true">
+
+				<sublayers>
+					<sublayer
+						id = "0"
+						title = "Отеделения почтовых связи"
+						visible = "true">
+
+						<popup
+							title = "&lt;p&gt;Отделение почтовой связи
+
+							&lt;br&gt;&lt;br&gt;&lt;em style='color:grey;'&gt;Дополнительную информацию можно получить на &lt;em&gt;
+							&lt;a target='_blank' href='https://www.belpost.by/Pochtovyyeotdeleniya0'&gt;сайте&lt;/a&gt;&lt;/p&gt;">
+
+							<fields>
+								<field
+									label = "Наименование"
+									name = "name"
+								/>
+								<field
+									label = "Почтовый индекс"
+									name = "postcode"
+								/>
+								<field
+									label = "Адрес"
+									name = "addr"
+								/>
+							</fields>
+						</popup>
+
+					</sublayer>
+					<sublayer
+						id = "1"
+						title = "Зоны действия почтовых индексов"
+						visible = "true">
+
+						<popup
+							title = "&lt;p&gt;Зона действия почтового индекса (актуальна на апрель 2020 года)
+
+							&lt;br&gt;&lt;br&gt;&lt;em style='color:grey;'&gt;Дополнительную информацию можно получить на &lt;em&gt;
+							&lt;a target='_blank' href='https://www.belpost.by/'&gt;сайте&lt;/a&gt;&lt;/p&gt;">
+
+							<fields>
+								<field
+									label = "&lt;em style='color:white;'&gt;*"
+									name = " "
+								/>
+								<field
+									label = "Почтовый индекс"
+									name = "postal_ind"
+								/>
+								<field
+									label = "Адрес отделения почтовой связи"
+									name = "zone_addr"
+								/>
+								<field
+									label = "&lt;em style='color:white;'&gt;*"
+									name = "za_2"
+								/>
+								<field
+									label = "&lt;em style='color:white;'&gt;*"
+									name = "za_3"
+								/>
+								<field
+									label = "&lt;em style='color:white;'&gt;*"
+									name = "za_4"
+								/>
+							</fields>
+						</popup>
+					</sublayer>
+				</sublayers>
+			</layer>
+
+			<layer
+				type     = "dynamic"
+				id       = "7"
+				title    = "Геоинформация"
+				url      = "http://ArcGISServer:8399/arcgis/rest/services/GEOBASE1/MapServer"
+				visible  = "false"
+				toc      = "true"
+				tocSlider = "true"
+				opacity  = "0.5"
+                maxScale  = "14"
+				token = "">
+			
+				<sublayers>
+                    
+					<sublayer
+						id = "1"
+						title = "Железные дороги"
+						visible = "true">
+						
+						<popup 
+							title = "Железные дороги">
+							
+							<fields>
+							</fields>
+							
+						</popup>
+					
+						
+					</sublayer>
+					<sublayer
+						id = "2"
+						title = "Реки"
+						visible = "true">
+
+						<popup
+							title = "Реки">
+
+							<fields>
+								<field
+									label = "Вид объекта"
+									name = "OBJECTNAME"
+								/>
+
+								<field
+									label = "Название объекта"
+									name = "LABEL"
+								/>
+							</fields>
+
+						</popup>
+
+					</sublayer>
+					
+					<sublayer
+						id = "3"
+						title = "Гидрография"
+						visible = "true">
+
+						<popup
+							title = "Гидрография">
+
+							<fields>
+                                <field
+                                        label = "Вид объекта"
+                                        name = "OBJECTNAME"
+                                        />
+
+                                <field
+                                        label = "Название объекта"
+                                        name = "LABEL"
+                                        />
+
+                            </fields>
+
+						</popup>
+
+					</sublayer>
+					
+					<sublayer
+						id = "4"
+						title = "Растительность"
+						visible = "true">
+
+						<popup
+							title = "Растительность">
+
+                            <fields>
+                                <field
+                                        label = "Вид объекта"
+                                        name = "OBJECTNAME"
+                                        />
+                            </fields>
+						</popup>
+
+					</sublayer>
+					<sublayer
+						id = "0"
+						title = "Автомобильные дороги"
+						visible = "true">
+
+						<popup
+							title = "Автомобильные дороги">
+
+							<fields>
+								<field
+									label = "Номер дороги"
+									name = "SEM53"
+								/>
+								<field
+									label = "Тип дороги"
+									name = "TYPE"
+								/>
+								<field
+									label = "Название дороги"
+									name = "LABEL"
+								/>
+							</fields>
+
+						</popup>
+
+					</sublayer>
+				</sublayers>
+			</layer>
+			
+			<layer
+				type = "dynamic"
+				id = "8"
+				title = "Капитальные строения г.Минска"
+				url = "http://ArcGISServer:8399/arcgis/rest/services/BUILDINGS/MapServer"
+				visible = "false"
+				toc  = "true"
+				tocSlider = "true"
+				opacity  = "0.5"
+				token = ""
+                maxScale  = "14"
+				dateFilter = "true">
+				
+				<sublayers>
+					<sublayer
+						id = "0"
+						title = "Капитальные строения"
+						visible = "true">
+						
+						<popup
+							title = "&lt;p&gt;Капитальное строение
+							
+							&lt;br&gt;&lt;br&gt;&lt;em style='color:grey;'&gt;Дополнительную информацию можно получить на сайте: &lt;em&gt;
+							&lt;a target='_blank' href='http://nca.by/rus/formir/rh/'&gt; http://nca.by/rus/formir/rh&lt;/a&gt;&lt;/p&gt;">
+
+
+							<fields>
+								<field
+									label = "Тип объекта"
+									name = "OWN_NAME"
+								/>
+								
+								<field
+									label = "Назначение объекта"
+									name = "CLASSIFIER"
+								/>
+								
+								<field
+									label = "Номер строения"
+									name = "BUILD_NUM"
+								/>
+
+								<field
+									label = "Номер корпуса"
+									name = "CORP_NUM"
+								/>
+
+								<field
+									label = "Этажность, материал стен"
+									name = "FLOOR_MAT"
+								/>
+								
+							</fields>
+						</popup>	
+
+					</sublayer>
+				</sublayers>
+			</layer>
+
+			<layer
+				type = "dynamic"
+				id = "9"
+				title = "Организации системы&lt;br&gt;Госкомимущества"
+				url = "http://arcgisserver:8399/arcgis/rest/services/GKI_RB2020/MapServer"
+				visible = "false"
+				toc  = "true"
+				tocSlider = "true"
+				opacity  = "1.0"
+				token = ""
+                maxScale  = "14"
+				dateFilter = "true">
+
+				<sublayers>
+					<sublayer
+						id = "0"
+						title = "Государственный комитет по имуществу Республики Беларусь"
+						visible = "true">
+
+						<popup
+							title = "Государственный комитет по имуществу Республики Беларусь">
+
+							<fields>
+								<field
+									label = "Адрес"
+									name = "ADDRESS"
+								/>
+
+								<field
+									label = "Телефон"
+									name = "Phone"
+								/>
+
+								<field
+									label = "Email"
+									name = "Email"
+								/>
+
+								<field
+									label = "Сайт"
+									name = "Site"
+								/>
+
+							</fields>
+						</popup>
+
+					</sublayer>
+					<sublayer
+						id = "1"
+						title = "Агентства по государственной регистрации и земельному кадастру"
+						visible = "true">
+
+						<popup
+							title = "Агентство по государственной регистрации и земельному кадастру">
+
+							<fields>
+
+								<field
+									label = "Агентство"
+									name = "TOR"
+								/>
+
+								<field
+									label = "Филиал"
+									name = "FILIAL"
+								/>
+
+								<field
+									label = "Бюро"
+									name = "BURO"
+								/>
+
+								<field
+									label = "Приемный пункт заказов"
+									name = "Punkt_priema"
+								/>
+
+								<field
+									label = "Адрес"
+									name = "ADDRESS"
+								/>
+
+								<field
+									label = "Телефон"
+									name = "Phone"
+								/>
+
+								<field
+									label = "Email"
+									name = "Email"
+								/>
+
+								<field
+									label = "Сайт"
+									name = "Site"
+								/>
+
+							</fields>
+                        </popup>
+
+					</sublayer>
+
+					<sublayer
+						id = "2"
+						title = "Организации по землеустройству"
+						visible = "true">
+
+						<popup
+							title = "Организация по землеустройству">
+
+							<fields>
+
+								<field
+									label = "Наименование"
+									name = "Name"
+								/>
+
+								<field
+									label = "Адрес"
+									name = "ADDRESS"
+								/>
+
+								<field
+									label = "Телефон"
+									name = "Phone"
+								/>
+
+								<field
+									label = "Email"
+									name = "Email"
+								/>
+
+								<field
+									label = "Сайт"
+									name = "Site"
+								/>
+
+							</fields>
+                        </popup>
+
+					</sublayer>
+					<sublayer
+						id = "3"
+						title = "Топографо-геодезические и картографические организации"
+						visible = "true">
+
+						<popup
+							title = "Топографо-геодезические и картографические организации">
+
+							<fields>
+
+								<field
+									label = "Наименование"
+									name = "Name"
+								/>
+
+								<field
+									label = "Адрес"
+									name = "ADDRESS"
+								/>
+
+								<field
+									label = "Телефон"
+									name = "Phone"
+								/>
+
+								<field
+									label = "Email"
+									name = "Email"
+								/>
+
+								<field
+									label = "Сайт"
+									name = "Site"
+								/>
+
+							</fields>
+                        </popup>
+
+					</sublayer>
+					<sublayer
+						id = "4"
+						title = "Организации, осуществляющие оценочную и аукционную деятельность"
+						visible = "true">
+
+						<popup
+							title = "Организация, осуществляющая оценочную и аукционную деятельность">
+
+							<fields>
+
+								<field
+									label = "Наименование"
+									name = "Name"
+								/>
+
+								<field
+									label = "Адрес"
+									name = "ADDRESS"
+								/>
+
+								<field
+									label = "Телефон"
+									name = "Phone"
+								/>
+
+								<field
+									label = "Email"
+									name = "Email"
+								/>
+
+								<field
+									label = "Сайт"
+									name = "Site"
+								/>
+
+							</fields>
+                        </popup>
+
+					</sublayer>
+					<sublayer
+						id = "5"
+						title = "Учебный центр "
+						visible = "true">
+
+						<popup
+							title = "Учебный центр">
+
+							<fields>
+
+								<field
+									label = "Наименование"
+									name = "Name"
+								/>
+
+								<field
+									label = "Адрес"
+									name = "ADDRESS"
+								/>
+
+								<field
+									label = "Телефон"
+									name = "Phone"
+								/>
+
+								<field
+									label = "Email"
+									name = "Email"
+								/>
+
+								<field
+									label = "Сайт"
+									name = "Site"
+								/>
+
+							</fields>
+                        </popup>
+
+					</sublayer>
+					<sublayer
+						id = "6"
+						title = "Территории обслуживания организаций по гос. регистрации"
+						visible = "true">
+
+						<popup
+							title = "Территория обслуживания организаций по государственной регистрации">
+
+							<fields>
+								<field
+									label = "Агентство"
+									name = "TOR"
+								/>
+
+								<field
+									label = "Филиал"
+									name = "filial__PKK"
+								/>
+
+								<field
+									label = "Бюро"
+									name = "BURO_PKK"
+								/>
+
+							</fields>
+						</popup>
+
+					</sublayer>
+				</sublayers>
+			</layer>
+
+          <!--  <layer
+                    type = "dynamic"
+                    id = "11"
+                    title = "Кадастровая оценка СТ Гомельской области"
+                    url = "http://arcgisserver:8399/arcgis/rest/services/KO_ST/MapServer"
+                    visible = "false"
+                    toc  = "true"
+                    tocSlider = "true"
+                    opacity  = "0.5"
+                    token = ""
+                    maxScale  = "14"
+                    dateFilter = "true">
+
+                <sublayers>
+                    <sublayer
+                            id = "0"
+                            title = "Кадастровая оценка СТ"
+                            visible = "true">
+
+                        <popup
+								title = "&lt;p&gt;Кадастровая оценка СТ
+							
+								&lt;br&gt;&lt;br&gt;&lt;em style='color:grey;'&gt;Актуальную информацию о кадастровой стоимости можно получить на сайте: &lt;em&gt;
+								&lt;a target='_blank' href='http://vl.nca.by/'&gt; http://vl.nca.by&lt;/a&gt;&lt;/p&gt;">
+
+                            <fields> 
+                            </fields>
+                            &lt;!&ndash;<fields label = "Вн. адрес ALL" fields = "ELEMENTTYP,ELEMENTNAM" />&ndash;&gt;
+                        </popup>
+
+                    </sublayer>
+                </sublayers>
+            </layer>-->
+
+            <layer
+                    type = "dynamic"
+                    id = "10"
+                    title = "Автозаправочные станции"
+                    url = "http://arcgisserver:8399/arcgis/rest/services/AZS_BEL/MapServer"
+                    visible = "false"
+                    toc  = "true"
+                    tocSlider = "true"
+                    opacity  = "1.0"
+                    token = ""
+                    maxScale  = "14"
+                    dateFilter = "true">
+
+                <sublayers>
+                    <sublayer
+                            id = "0"
+                            title = "Станции зарядки электромобилей"
+                            visible = "true">
+
+                        <popup
+                                title = "Станции зарядки электромобилей">
+
+                            <fields>
+                                <field
+                                        label = "Наименование"
+                                        name = "NAME"
+                                        />
+
+                                <field
+                                        label = "Время работы"
+                                        name = "Work_time"
+                                        />
+
+                                <field
+                                        label = "Перерывы"
+                                        name = "Break"
+                                        />
+
+                                <field
+                                        label = "Тип станции"
+                                        name = "Tip"
+                                        />
+
+                                <field
+                                        label = "Номер телефона"
+                                        name = "Num_phone"
+                                        />
+
+                                <field
+                                        label = "Адрес"
+                                        name = "Addresses_"
+                                        />
+
+                            </fields>
+                            <!--<fields label = "Вн. адрес ALL" fields = "ELEMENTTYP,ELEMENTNAM" />-->
+                        </popup>
+
+                    </sublayer>                                        
+                    <sublayer
+                            id = "1"
+                            title = "Автозаправочные станции"
+                            visible = "true">
+
+                        <popup
+                                title = "Автозаправочные станции">
+
+                            <fields>
+                                <field
+                                        label = "Наименование"
+                                        name = "NAME"
+                                        />
+
+                                <field
+                                        label = "Время работы"
+                                        name = "Work_time"
+                                        />
+
+                                <field
+                                        label = "Перерывы"
+                                        name = "Break"
+                                        />
+
+                                <field
+                                        label = "Тип топлива"
+                                        name = "Fuel"
+                                        />
+
+                                <field
+                                        label = "Номер телефона"
+                                        name = "Num_phone"
+                                        />
+
+                                <field
+                                        label = "Адрес"
+                                        name = "Addresses_"
+                                        />
+
+                            </fields>
+                            <!--<fields label = "Вн. адрес ALL" fields = "ELEMENTTYP,ELEMENTNAM" />-->
+                        </popup>
+
+                    </sublayer>
+                </sublayers>
+            </layer>
+
+            <layer
+                    type = "dynamic"
+                    id = "11"
+                    title = "Границы зон обслуживания&lt;br&gt;организаций и учреждений"
+                    url = "http://arcgisserver:8399/arcgis/rest/services/Zones_obsl_org/MapServer"
+                    visible = "false"
+                    toc  = "true"
+                    tocSlider = "true"
+                    opacity  = "1.0"
+                    token = ""
+                    maxScale  = "14"
+                    dateFilter = "true">
+
+                <sublayers>
+                    <sublayer
+                            id = "0"
+                            title = "Фрунзенский район г. Минска"
+                            visible = "true">
+
+                        <popup
+                                title = "Границы зон обслуживания организаций и учреждений &lt;br&gt; Фрунзенского района г. Минска">
+
+                            <fields>
+                                <field
+                                        label = "Адрес"
+                                        name = "address"
+                                        />
+
+                                <field
+                                        label = "Наименование"
+                                        name = "name"
+                                        />
+
+                                <field
+                                        label = "Площадь, кв. м"
+                                        name = "sq"
+                                        />
+
+                            </fields>
+                            <!--<fields label = "Вн. адрес ALL" fields = "ELEMENTTYP,ELEMENTNAM" />-->
+                        </popup>
+
+                    </sublayer>
+					<sublayer
+							id = "1"
+							title = "г. Жлобин"
+							visible = "true">
+
+						<popup
+								title = "Границы зон обслуживания организаций и учреждений &lt;br&gt; г. Жлобина">
+
+							<fields>
+								<field
+										label = "Адрес"
+										name = "address"
+								/>
+
+								<field
+										label = "Наименование"
+										name = "name"
+								/>
+
+								<field
+										label = "Площадь, кв. м"
+										name = "sq"
+								/>
+
+							</fields>
+
+						</popup>
+					</sublayer>
+                </sublayers>
+            </layer>
+
+            <layer
+                    type = "dynamic"
+                    id = "12"
+                    title = "Зоны запретные/опасные/запрещённые&lt;br&gt;для использования авиамоделей"
+                    url = "http://arcgisserver:8399/arcgis/rest/services/Forbidden_June2020/MapServer"
+                    visible = "false"
+                    toc  = "true"
+                    tocSlider = "true"
+                    opacity  = "0.8"
+                    token = ""
+                    maxScale  = "14"
+                    dateFilter = "true">
+
+                <sublayers>
+
+                    <sublayer
+                            id = "0"
+                            title = "Запретные зоны"
+                            visible = "true">
+
+                        <popup
+                                title = "Запретные зоны
+							&lt;br&gt;&lt;br&gt;&lt;em style='color:grey;'&gt;Источник: &lt;em&gt;
+							&lt;a target='_blank' href='http://ais.mil.by/'&gt; ais.mil.by&lt;/a&gt;&lt;/p&gt;">
+
+
+                            <fields>
+
+                                <field
+                                        label = "Номер зоны"
+                                        name = "F3"
+                                />
+
+                                <field
+                                        label = "Радиус зоны, км (при наличии)"
+                                        name = "Radius_km"
+                                />
+
+                                <field
+                                        label = "Высота верхняя, м"
+                                        name = "top_height"
+                                />
+
+                                <field
+                                        label = "Высота нижняя"
+                                        name = "low_height"
+                                />
+                            </fields>
+                        </popup>
+                    </sublayer>
+
+                    <sublayer
+                            id = "1"
+                            title = "Опасные зоны"
+                            visible = "true">
+
+                        <popup
+                                title = "Опасные зоны
+							&lt;br&gt;&lt;br&gt;&lt;em style='color:grey;'&gt;Источник: &lt;em&gt;
+							&lt;a target='_blank' href='http://ais.mil.by/'&gt; ais.mil.by&lt;/a&gt;&lt;/p&gt;">
+
+
+                            <fields>
+
+                                <field
+                                        label = "Номер зоны"
+                                        name = "F3"
+                                />
+
+                                <field
+                                        label = "Радиус зоны, км (при наличии)"
+                                        name = "Radius_km"
+                                />
+
+                                <field
+                                        label = "Высота верхняя, м"
+                                        name = "Top_height"
+                                />
+
+                                <field
+                                        label = "Высота нижняя"
+                                        name = "low_height"
+                                />
+                            </fields>
+                        </popup>
+                    </sublayer>
+
+                    <sublayer
+                            id = "2"
+                            title = "Зоны, запрещённые для использования авиамоделей"
+                            visible = "true">
+
+                        <popup
+                                title = "Зоны, запрещённые для использования авиамоделей
+							&lt;br&gt;&lt;br&gt;&lt;em style='color:grey;'&gt;Источник: &lt;em&gt;
+							&lt;a target='_blank' href='http://ais.mil.by/'&gt; ais.mil.by&lt;/a&gt;&lt;/p&gt;">
+
+                            <fields>
+
+                                <field
+                                        label = "Номер зоны"
+                                        name = "Zone"
+                                />
+
+                                <field
+                                        label = "Площадь зоны, км2"
+                                        name = "Area"
+                                />
+
+                                <field
+                                        label = "Периметр зоны, км"
+                                        name = "Perimeter"
+                                />
+
+                                <field
+                                        label = "Радиус зоны, км (при наличии)"
+                                        name = "Radius"
+                                />
+
+								<field
+                                        label = "Государственный орган (организация), в интересах которого (которой) установлена зона*"
+                                        name = "Organiz"
+                                />
+
+								<field
+                                        label = "&lt;br&gt;&lt;br&gt;&lt;em style='color:grey;'&gt;*по данным Министерства обороны Республики Беларусь &lt;em&gt;
+										&lt;a target='_blank' href=''&gt; &lt;/a&gt;"
+                                        name = "не существует"
+                                />
+
+                            </fields>
+                        </popup>
+
+                    </sublayer>
+                </sublayers>
+            </layer>
+										
+			<!--<layer
+				type = "dynamic"
+				id = "19"
+				title = "Национальное кадастровое агентство"
+				url = "http://arcgisserver:8399/arcgis/rest/services/Logo2/MapServer"
+				visible = "true"
+				toc  = "false"
+				opacity  = "1.0"
+				>
+				
+				<sublayers>
+				
+					<sublayer
+						id = "0"
+						title = "Национальное кадастровое агентство"
+						visible = "true">
+						
+						<popup
+							title = "Национальное кадастровое агентство">
+
+							<fields>
+								
+									<field
+									label = "Название организации"
+									name = "name"
+								/>
+								
+								<field
+									label = "Сайт"
+									name = "site"
+								/>
+																
+							</fields>
+                        </popup>
+					</sublayer>
+				</sublayers>
+			</layer> -->
+			
+		<layer 
+				type = "dynamic"
+				id = "13"
+				title = "Дуга Струве"
+				url = "http://arcgisserver:8399/arcgis/rest/services/STRUVE/MapServer"
+				visible = "false"
+				toc  = "true"
+				tocSlider = "true"
+				opacity  = "1.0"
+				token = ""
+                maxScale  = "14"
+				dateFilter = "true">
+				
+				<sublayers>
+					<sublayer
+						id = "0"
+						title = "Дуга Струве"
+						visible = "true">
+						
+						<popup
+							title = "Дуга Струве">
+
+							<fields>
+								
+									<field
+									label = "Название пункта"
+									name = "Name"
+								/>
+								
+								<field
+								label = "Альтернативное название пункта"
+									name = "Alt_name"
+								/>
+																
+								<field
+									label = "Широта"
+									name = "Latitude"
+								/>
+								<field
+									label = "Долгота"
+									name = "Longitude"
+								/>
+								<field
+									label = "Страна"
+									name = "Country"
+								/>
+													
+							</fields>
+                        </popup>
+
+					</sublayer>
+				</sublayers>
+		</layer>
+
+		<layer
+				type = "dynamic"
+				id = "14"
+				title = "Места для выгула собак"
+				url = "http://arcgisserver:8399/arcgis/rest/services/Dog_Minsk/MapServer"
+				visible = "false"
+				toc  = "true"
+				tocSlider = "true"
+				opacity  = "1.0"
+				token = ""
+                maxScale  = "14"
+				dateFilter = "true">
+
+				<sublayers>
+					<sublayer
+						id = "0"
+						title = "Места для выгула собак"
+						visible = "true">
+
+						<popup
+							title = "Места для выгула собак">
+
+							<fields>
+
+									<field
+									label = "Адрес"
+									name = "ADR"
+								/>
+
+								<field
+								label = "Площадь, кв. м."
+									name = "area"
+								/>
+
+								<field
+								label = "Документ-основание"
+									name = "doc"
+								/>
+
+							</fields>
+                        </popup>
+
+					</sublayer>
+				</sublayers>
+		</layer>
+
+			<layer
+					type = "dynamic"
+					id = "15"
+					title = "Исполнительные комитеты"
+					url = "http://ArcGISServer:8399/arcgis/rest/services/Ispolkom2019/MapServer"
+					visible = "false"
+					toc  = "true"
+					tocSlider = "true"
+					opacity  = "1"
+					token = ""
+					maxScale  = "14"
+					dateFilter = "true">
+
+				<sublayers>
+					<sublayer
+							id = "0"
+							title = "Областные исполнительные комитеты"
+							visible = "true">
+
+						<popup
+								title = "Областные исполнительные комитеты">
+
+
+							<fields>
+
+								<field
+										label = "Наименование"
+										name = "Isp_Name"
+								/>
+
+								<field
+										label = "Адрес"
+										name = "AddressATE"
+								/>
+
+								<field
+										label = "Сайт"
+										name = "Site"
+								/>
+							</fields>
+						</popup>
+					</sublayer>
+
+					<sublayer
+							id = "1"
+							title = "Районные исполнительные комитеты"
+							visible = "true">
+
+						<popup
+								title = "Районные исполнительные комитеты">
+
+							<fields>
+
+								<field
+										label = "Наименование"
+										name = "Isp_Name"
+								/>
+
+								<field
+										label = "Адрес"
+										name = "AddressATE"
+								/>
+
+								<field
+										label = "Сайт"
+										name = "Site"
+								/>
+							</fields>
+						</popup>
+					</sublayer>
+
+					<sublayer
+							id = "2"
+							title = "Городские исполнительные комитеты"
+							visible = "true">
+
+						<popup
+								title = "Городские исполнительные комитеты">
+
+							<fields>
+
+								<field
+										label = "Наименование"
+										name = "Isp_Name"
+								/>
+
+								<field
+										label = "Адрес"
+										name = "AddressATE"
+								/>
+
+								<field
+										label = "Сайт"
+										name = "Site"
+								/>
+							</fields>
+						</popup>
+					</sublayer>
+
+					<sublayer
+							id = "3"
+							title = "Сельские исполнительные комитеты"
+							visible = "true">
+
+						<popup
+								title = "Сельские исполнительные комитеты">
+
+
+							<fields>
+
+								<field
+										label = "Наименование"
+										name = "Isp_Name"
+								/>
+
+								<field
+										label = "Адрес"
+										name = "AddressATE"
+								/>
+
+								<field
+										label = "E-mail"
+										name = "Site"
+								/>
+							</fields>
+						</popup>
+					</sublayer>
+				</sublayers>
+			</layer>
+		
+					<layer
+				type = "dynamic"
+				id = "16"
+				title = "Пределы пограничной зоны и полосы"
+				url = "http://arcgisserver:8399/arcgis/rest/services/Pogran_area5/MapServer"
+				visible = "false"
+				toc  = "true"
+				tocSlider = "true"
+				opacity  = "0.6"
+				token = "">
+				
+				<sublayers>
+				
+					<sublayer
+							id = "1"
+							title = "Пределы пограничной зоны"
+							visible = "true">
+							
+							<popup
+							title = "&lt;p&gt;Пределы пограничной зоны
+							&lt;br&gt;&lt;br&gt;&lt;em style='color:grey;'&gt;Дополнительную информацию можно получить на сайте Госпогранкомитета: &lt;em&gt;
+							&lt;a target='_blank' href='http://gpk.gov.by'&gt; gpk.gov.by.&lt;/a&gt;&lt;/p&gt;">
+		
+								<fields>
+									<field
+										label = "Область"
+										name = "OBL"
+									/>
+									
+									<field
+										label = "Основание установления пограничной зоны"
+										name = "DOC"
+									/>
+
+									<field
+										label = "Порядок посещения"
+										name = "ORD"
+									/>
+
+								</fields>
+							</popup>
+
+						</sublayer>
+				
+				
+					<sublayer
+							id = "0"
+							title = "Пределы пограничной полосы"
+							visible = "true">
+							
+							<popup
+							title = "&lt;p&gt;Пределы пограничной полосы
+							
+							&lt;br&gt;&lt;br&gt;&lt;em style='color:grey;'&gt;Дополнительную информацию можно получить на сайте Госпогранкомитета: &lt;em&gt;
+							&lt;a target='_blank' href='http://gpk.gov.by'&gt; gpk.gov.by.&lt;/a&gt;&lt;/p&gt;">
+		
+								<fields>
+									
+									<field
+										label = "Область"
+										name = "OBL"
+									/>
+									
+									<field
+										label = "Основание установления пограничной полосы"
+										name = "DOC"
+									/>
+
+									<field
+										label = "Порядок посещения"
+										name = "ORD"
+									/>
+
+								</fields>
+							</popup>
+
+						</sublayer>
+				</sublayers>
+			</layer>
+
+			<layer
+				type = "dynamic"
+				id = "17"
+				title = "Службы субсидирования"
+				url = "http://arcgisserver:8399/arcgis/rest/services/Subsi_slugbi2/MapServer"
+				visible = "false"
+				toc  = "true"
+				tocSlider = "true"
+				opacity  = "1"
+				token = "">
+				
+				<sublayers>
+					<sublayer
+						id = "0"
+						title = "Службы субсидирования"
+						visible = "true">
+						
+						<popup
+							title = "&lt;p&gt;Служба субсидирования">
+
+							<fields>
+								<field
+									label = "Организация"
+									name = "Name"
+								/>
+								
+								<field
+									label = "На основании:"
+									name = "Docs"
+								/>
+								
+								<field
+									label = "Адрес"
+									name = "Adress"
+								/>
+								
+								
+								<field
+									label = "Сайт"
+									name = "cite"
+								/>
+								
+
+							</fields>
+						</popup>
+
+					</sublayer>
+				</sublayers>
+			</layer>	
+
+			<layer
+					type = "dynamic"
+					id = "18"
+					title = "Родники"
+					url = "http://arcgisserver:8399/arcgis/rest/services/Rodniki/MapServer"
+					visible = "false"
+					toc  = "true"
+					tocSlider = "true"
+					opacity  = "1"
+					token = "">
+
+				<sublayers>
+					<sublayer
+							id = "0"
+							title = "Родники"
+							visible = "true">
+
+						<popup
+								title = "&lt;p&gt;Родники">
+
+                            <fields>
+                                <field
+                                        label = "Наименование*"
+                                        name = "Name_Reestr"
+                                />
+                                <field
+                                        label = "Наименование по другим источникам информации"
+                                        name = "Name_NKA"
+                                />
+                                <field
+                                        label = "Описание"
+                                        name = "State"
+                                />
+                                <field
+                                        label = "Бассейн реки*"
+                                        name = "Basin"
+                                />
+                                <field
+                                        label = "Источник питания*"
+                                        name = "Source"
+                                />
+                                <field
+                                        label = "Характер действия*"
+                                        name = "Character"
+                                />
+                                <field
+                                        label = "Сведения о принадлежности к особо охраняемым природным территориям*"
+                                        name = "OOPT"
+                                />
+
+                                <field
+                                        label = "Фотография"
+                                        name = "Image"
+                                />
+
+                                <!-- Поле "Гидрологические характеристики" только назхвание категории во всплывающем окне -->
+                                <field
+                                        label = "&lt;p&gt;&lt;b&gt;Гидрологические характеристики*:&lt;/b&gt;"
+                                        name = "не существует"
+                                />
+                                <field
+                                        label = " - дебит, л/с"
+                                        name = "Debit"
+                                />
+                                <field
+                                        label = " - глубина, м"
+                                        name = "Depth"
+                                />
+                                <field
+                                        label = " - ширина, м"
+                                        name = "Width"
+                                />
+
+
+                                <field
+                                        label = "&lt;br&gt;&lt;br&gt;&lt;em style='color:black;'&gt;*по данным Реестра поверхностных водных объектов Республики Беларусь &lt;em&gt;
+										&lt;a target='_blank' href='http://cricuwr.by/'&gt; (РУП &#171;ЦНИИКИВР&#187;)&lt;/a&gt;"
+                                        name = "не существует"
+                                />
+
+                            </fields>
+						</popup>
+
+					</sublayer>
+				</sublayers>
+			</layer>
+
+			<layer
+				type = "dynamic"
+				id = "19"
+				title = "Спутниковая система точного&lt;br&gt;позиционирования"
+				url = "http://ArcGISServer:8399/arcgis/rest/services/SSTP_test/MapServer"
+				visible = "false"
+				toc  = "true"
+				tocSlider = "true"
+				opacity  = "1"
+				token = "">
+				
+				<sublayers>
+					<sublayer
+						id = "0"
+						title = "Постоянно действующие пункты"
+						visible = "true">
+						
+						<popup
+							title = "&lt;p&gt;Постоянно действующий пункт
+							&lt;br&gt;&lt;br&gt;&lt;em style='color:grey;'&gt;Дополнительную информацию можно получить на сайте: &lt;em&gt;
+							&lt;a target='_blank' href='http://geo.by/'&gt; geo.by&lt;/a&gt;&lt;/p&gt;">
+
+							<fields>
+								<field
+									label = "Населенный пункт"
+									name = "Town"
+								/>
+								
+								<field
+									label = "Наименование"
+									name = "Code"
+								/>
+
+							</fields>
+						</popup>
+
+					</sublayer>
+				</sublayers>
+			</layer>
+
+			<layer
+					type = "dynamic"
+					id = "20"
+					title = "Кадастровая оценка. Зонирование территории"
+					url = "http://ArcGISServer:8399/arcgis/rest/services/Zonirovanie1/MapServer"
+					visible = "false"
+					toc  = "true"
+					tocSlider = "true"
+					opacity  = "1.0"
+					token = ""
+					maxScale  = "14"
+					dateFilter = "true">
+
+				<sublayers>
+					<sublayer
+							id = "0"
+							title = "Жилая многоквартирная зона 2015 г."
+							visible = "false">
+
+						<popup
+								title = "&lt;p&gt;Жилая многоквартирная зона 2015 г.
+
+								&lt;br&gt;&lt;br&gt;&lt;em style='color:grey;'&gt;Дополнительную информацию можно получить на сайте: &lt;em&gt;
+								&lt;a target='_blank' href='http://vl.nca.by/'&gt;  vl.nca.by&lt;/a&gt;&lt;/p&gt;">
+
+							<fields>
+
+								<field
+										label = "Территория оценки"
+										name = "Ter_ocenki"
+								/>
+
+								<field
+										label = "Номер оценочной зоны"
+										name = "zonenumber"
+								/>
+
+								<field
+										label = "Уникальный идентификатор"
+										name = "objectnumb"
+								/>
+
+							</fields>
+						</popup>
+
+					</sublayer>
+					<sublayer
+							id = "1"
+							title = "Жилая усадебная зона 2016 г."
+							visible = "false">
+
+						<popup
+								title = "&lt;p&gt;Жилая усадебная зона 2016 г.
+
+								&lt;br&gt;&lt;br&gt;&lt;em style='color:grey;'&gt;Дополнительную информацию можно получить на сайте: &lt;em&gt;
+								&lt;a target='_blank' href='http://vl.nca.by/'&gt;  vl.nca.by&lt;/a&gt;&lt;/p&gt;">
+
+							<fields>
+
+								<field
+										label = "Территория оценки"
+										name = "Ter_ocenki"
+								/>
+
+								<field
+										label = "Номер оценочной зоны"
+										name = "zonenumber"
+								/>
+
+								<field
+										label = "Уникальный идентификатор"
+										name = "objectnumb"
+								/>
+
+							</fields>
+						</popup>
+
+					</sublayer>
+					<sublayer
+							id = "2"
+							title = "Рекреационная зона 2016 г."
+							visible = "false">
+
+						<popup
+								title = "&lt;p&gt;Рекреационная зона 2016 г.
+
+								&lt;br&gt;&lt;br&gt;&lt;em style='color:grey;'&gt;Дополнительную информацию можно получить на сайте: &lt;em&gt;
+								&lt;a target='_blank' href='http://vl.nca.by/'&gt;  vl.nca.by&lt;/a&gt;&lt;/p&gt;">
+
+							<fields>
+
+								<field
+										label = "Территория оценки"
+										name = "Ter_ocenki"
+								/>
+
+								<field
+										label = "Номер оценочной зоны"
+										name = "zonenumber"
+								/>
+
+								<field
+										label = "Уникальный идентификатор"
+										name = "objectnumb"
+								/>
+
+							</fields>
+						</popup>
+
+					</sublayer>
+					<sublayer
+							id = "3"
+							title = "Общественно-деловая зона 2017 г."
+							visible = "false">
+
+						<popup
+								title = "&lt;p&gt;Общественно-деловая зона 2017 г.
+
+								&lt;br&gt;&lt;br&gt;&lt;em style='color:grey;'&gt;Дополнительную информацию можно получить на сайте: &lt;em&gt;
+								&lt;a target='_blank' href='http://vl.nca.by/'&gt; vl.nca.by&lt;/a&gt;&lt;/p&gt;">
+
+							<fields>
+
+								<field
+										label = "Территория оценки"
+										name = "Ter_ocenki"
+								/>
+
+								<field
+										label = "Номер оценочной зоны"
+										name = "zonenumber"
+								/>
+
+								<field
+										label = "Уникальный идентификатор"
+										name = "objectnumb"
+								/>
+
+							</fields>
+						</popup>
+
+					</sublayer>
+					<sublayer
+							id = "4"
+							title = "Производственная зона 2018 г."
+							visible = "false">
+
+						<popup
+								title = "&lt;p&gt;Производственная зона 2018 г.
+
+								&lt;br&gt;&lt;br&gt;&lt;em style='color:grey;'&gt;Дополнительную информацию можно получить на сайте: &lt;em&gt;
+								&lt;a target='_blank' href='http://vl.nca.by/'&gt; vl.nca.by&lt;/a&gt;&lt;/p&gt;">
+
+							<fields>
+
+								<field
+										label = "Территория оценки"
+										name = "Ter_ocenki"
+								/>
+
+								<field
+										label = "Номер оценочной зоны"
+										name = "zonenumber"
+								/>
+
+								<field
+										label = "Уникальный идентификатор"
+										name = "objectnumb"
+								/>
+
+							</fields>
+						</popup>
+
+					</sublayer>
+					<sublayer
+							id = "5"
+							title = "Садоводческие товарищества 2016 u/"
+							visible = "false">
+
+						<popup
+								title = "&lt;p&gt;Садоводческие товарищества 2016
+
+								&lt;br&gt;&lt;br&gt;&lt;em style='color:grey;'&gt;Дополнительную информацию можно получить на сайте: &lt;em&gt;
+								&lt;a target='_blank' href='http://vl.nca.by/'&gt; vl.nca.by&lt;/a&gt;&lt;/p&gt;">
+
+							<fields>
+
+								<field
+										label = "Номер оценочной зоны"
+										name = "zonenumber"
+								/>
+
+								<field
+										label = "Уникальный идентификатор"
+										name = "objectnumb"
+								/>
+
+								<field
+										label = "Наименование оценочной зоны"
+										name = "zonename"
+								/>
+
+							</fields>
+						</popup>
+
+					</sublayer>
+				</sublayers>
+			</layer>
+
+			<layer
+					type = "dynamic"
+					id = "21"
+					title = "Кадастровая оценка сельских&lt;br&gt;населенных пунктов (условное местоположение)"
+					url = "http://ArcGISServer:8399/arcgis/rest/services/Zonirovanie1_SNP/MapServer"
+					visible = "false"
+					toc  = "true"
+					tocSlider = "true"
+					opacity  = "1"
+					token = "">
+
+				<sublayers>
+					<sublayer
+							id = "0"
+							title = "Жилая многоквартирная зона 2015 г."
+							visible = "false">
+
+						<popup
+								title = "&lt;p&gt;Жилая многоквартирная зона 2015 г.
+							&lt;br&gt;&lt;br&gt;&lt;em style='color:grey;'&gt;Дополнительную информацию можно получить на сайте &lt;em&gt;
+							&lt;a target='_blank' href='http://vl.nca.by/'&gt; vl.nca.by&lt;/a&gt;&lt;/p&gt;">
+
+							<fields>
+								<field
+										label = "Наименование"
+										name = "zonename"
+								/>
+
+								<field
+										label = "Номер оценочной зоны"
+										name = "zonenumber"
+								/>
+
+								<field
+										label = "Уникальный идентификатор"
+										name = "objectnumb"
+								/>
+							</fields>
+						</popup>
+
+					</sublayer>
+					<sublayer
+							id = "1"
+							title = "Жилая усадебной зона 2016 г."
+							visible = "false">
+
+						<popup
+								title = "&lt;p&gt;Жилая усадебной зона 2016 г.
+							&lt;br&gt;&lt;br&gt;&lt;em style='color:grey;'&gt;Дополнительную информацию можно получить на сайте &lt;em&gt;
+							&lt;a target='_blank' href='http://vl.nca.by/'&gt; vl.nca.by&lt;/a&gt;&lt;/p&gt;">
+
+							<fields>
+								<field
+										label = "Наименование"
+										name = "zonename"
+								/>
+
+								<field
+										label = "Номер оценочной зоны"
+										name = "zonenumber"
+								/>
+
+								<field
+										label = "Уникальный идентификатор"
+										name = "objectnumb"
+								/>
+							</fields>
+						</popup>
+
+					</sublayer>
+					<sublayer
+							id = "2"
+							title = "Рекреационная зона 2016 г."
+							visible = "false">
+
+						<popup
+								title = "&lt;p&gt;Рекреационная зона 2016 г.
+							&lt;br&gt;&lt;br&gt;&lt;em style='color:grey;'&gt;Дополнительную информацию можно получить на сайте &lt;em&gt;
+							&lt;a target='_blank' href='http://vl.nca.by/'&gt; vl.nca.by&lt;/a&gt;&lt;/p&gt;">
+
+							<fields>
+								<field
+										label = "Наименование"
+										name = "zonename"
+								/>
+
+								<field
+										label = "Номер оценочной зоны"
+										name = "zonenumber"
+								/>
+
+								<field
+										label = "Уникальный идентификатор"
+										name = "objectnumb"
+								/>
+							</fields>
+						</popup>
+
+					</sublayer>
+					<sublayer
+							id = "3"
+							title = "Общественно-деловая зона 2017 г."
+							visible = "false">
+
+						<popup
+								title = "&lt;p&gt;Общественно-деловая зона 2017 г.
+							&lt;br&gt;&lt;br&gt;&lt;em style='color:grey;'&gt;Дополнительную информацию можно получить на сайте &lt;em&gt;
+							&lt;a target='_blank' href='http://vl.nca.by/'&gt; vl.nca.by&lt;/a&gt;&lt;/p&gt;">
+
+							<fields>
+								<field
+										label = "Наименование"
+										name = "zonename"
+								/>
+
+								<field
+										label = "Номер оценочной зоны"
+										name = "zonenumber"
+								/>
+
+								<field
+										label = "Уникальный идентификатор"
+										name = "objectnumb"
+								/>
+							</fields>
+
+						</popup>
+					</sublayer>
+					<sublayer
+							id = "4"
+							title = "Производственная зона 2017 г."
+							visible = "false">
+
+						<popup
+								title = "&lt;p&gt;Производственная зона 2017 г.
+							&lt;br&gt;&lt;br&gt;&lt;em style='color:grey;'&gt;Дополнительную информацию можно получить на сайте &lt;em&gt;
+							&lt;a target='_blank' href='http://vl.nca.by/'&gt; vl.nca.by&lt;/a&gt;&lt;/p&gt;">
+
+							<fields>
+								<field
+										label = "Наименование"
+										name = "zonename"
+								/>
+
+								<field
+										label = "Номер оценочной зоны"
+										name = "zonenumber"
+								/>
+
+								<field
+										label = "Уникальный идентификатор"
+										name = "objectnumb"
+								/>
+							</fields>
+
+						</popup>
+					</sublayer>
+				</sublayers>
+			</layer>
+
+            <layer
+                    type = "dynamic"
+                    id = "22"
+                    title = "Проект карты благоустройства&lt;br&gt;Центрального района г. Минска"
+                    url = "http://ArcGISServer:8399/arcgis/rest/services/Nemiga_Zones/MapServer"
+                    visible = "false"
+                    toc  = "true"
+                    tocSlider = "true"
+                    opacity  = "0.8"
+                    token = ""
+                    maxScale  = "14"
+                    dateFilter = "true">
+
+                <sublayers>
+
+                    <sublayer
+                            id = "0"
+                            title = "Элементы улично-дорожной сети"
+                            visible = "true">
+
+                        <popup
+                                title = "&lt;p&gt;Элемент улично-дорожной сети (ЭУДС)&lt;/p&gt;">
+
+                            <fields>
+                                <field
+                                        label = "Категория нп"
+                                        name = "categoryNa"
+                                />
+
+                                <field
+                                        label = "Наименование нп"
+                                        name = "locality"
+                                />
+
+                                <field
+                                        label = "Категория ЭУДС"
+                                        name = "elementT_1"
+                                />
+
+                                <field
+                                        label = "Наименование ЭУДС на русском языке"
+                                        name = "elementNam"
+                                />
+
+                                <field
+                                        label = "Наименование ЭУДС на белорусском языке"
+                                        name = "elementN_1"
+                                />
+
+                                <field
+                                        label = "Наименование юридического лица, балансодержателя"
+                                        name = "Nam_balanc"
+                                />
+
+                                <field
+                                        label = "УНП балансодержателя"
+                                        name = "UNP_balanc"
+                                />
+
+                                <field
+                                        label = "Год постройки"
+                                        name = "year_build"
+                                />
+
+                                <field
+                                        label = "Дата приемки в эксплуатацию"
+                                        name = "date_oper"
+                                />
+
+                                <field
+                                        label = "Протяженность линейного сооружения, м"
+                                        name = "length"
+                                />
+
+                                <field
+                                        label = "Год реконструкции"
+                                        name = "year_rec"
+                                />
+
+                                <field
+                                        label = "Длина проезжей части, м"
+                                        name = "length_car"
+                                />
+
+                                <field
+                                        label = "Длина дорожного полотна, м"
+                                        name = "lengh_road"
+                                />
+
+                                <field
+                                        label = "Ширина дорожного полотна, м"
+                                        name = "width_road"
+                                />
+
+                            </fields>
+                        </popup>
+
+                    </sublayer>
+
+                    <sublayer
+                            id = "1"
+                            title = "Точечные объекты обслуживания"
+                            visible = "true">
+
+                        <popup
+                                title = "&lt;p&gt;Точечные объекты обслуживания&lt;/p&gt;">
+
+                            <fields>
+                                <field
+                                        label = "Наименование"
+                                        name = "Name"
+                                />
+
+                                <field
+                                        label = "Тип объекта"
+                                        name = "Type"
+                                />
+
+                                <field
+                                        label = "Вид объекта"
+                                        name = "Kind"
+                                />
+
+                                <field
+                                        label = "Обслуживающая организация"
+                                        name = "Organiz"
+                                />
+
+                            </fields>
+                        </popup>
+
+                    </sublayer>
+
+                    <sublayer
+                            id = "2"
+                            title = "Линейные объекты обслуживания"
+                            visible = "true">
+
+                        <popup
+                                title = "&lt;p&gt;Линейные объекты обслуживания&lt;/p&gt;">
+
+                            <fields>
+                                <field
+                                        label = "Наименование"
+                                        name = "Name_ob"
+                                />
+
+                                <field
+                                        label = "Обслуживающая организация"
+                                        name = "organiz"
+                                />
+
+                            </fields>
+                        </popup>
+
+                    </sublayer>
+
+                    <sublayer
+                            id = "3"
+                            title = "Точеченые коммуникации"
+                            visible = "true">
+
+                        <popup
+                                title = "&lt;p&gt;Точеченые коммуникации&lt;/p&gt;">
+
+                            <fields>
+                                <field
+                                        label = "Тип коммуникации*"
+                                        name = "Layer"
+                                />
+
+                                <field
+                                        label = "Наименование*"
+                                        name = "Name"
+                                />
+
+                                <field
+                                        label = "Инвентарный номер*"
+                                        name = "Inv_number"
+                                />
+
+                                <field
+                                        label = "Материал*"
+                                        name = "Material"
+                                />
+
+                                <field
+                                        label = "Глубина, м*"
+                                        name = "Depth"
+                                />
+
+                                <field
+                                        label = "&lt;br&gt;&lt;br&gt;&lt;em style='color:black;'&gt;*по данным Реестра характеристик недвижимого имущества Республики Беларусь &lt;em&gt;
+										&lt;a target='_blank' href='https://rh.nca.by/signin.html'&gt; (rh.nca.by)&lt;/a&gt;"
+                                        name = "не существует"
+                                />
+
+                            </fields>
+                        </popup>
+
+                    </sublayer>
+
+                    <sublayer
+                            id = "4"
+                            title = "Линейные коммуникации"
+                            visible = "true">
+
+                        <popup
+                                title = "&lt;p&gt;Линейные коммуникации&lt;/p&gt;">
+
+                            <fields>
+                                <field
+                                        label = "Тип коммуникации*"
+                                        name = "Layer"
+                                />
+
+                                <field
+                                        label = "Наименование*"
+                                        name = "Name"
+                                />
+
+                                <field
+                                        label = "Инвентарный номер*"
+                                        name = "Inv_number"
+                                />
+
+                                <field
+                                        label = "Материал*"
+                                        name = "Material"
+                                />
+
+                                <field
+                                        label = "Граница*"
+                                        name = "Border"
+                                />
+
+                                <field
+                                        label = "Длина, м*"
+                                        name = "Length"
+                                />
+
+                                <field
+                                        label = "&lt;br&gt;&lt;br&gt;&lt;em style='color:black;'&gt;*по данным Реестра характеристик недвижимого имущества Республики Беларусь &lt;em&gt;
+										&lt;a target='_blank' href='https://rh.nca.by/signin.html'&gt; (rh.nca.by)&lt;/a&gt;"
+                                        name = "не существует"
+                                />
+
+                            </fields>
+                        </popup>
+
+                    </sublayer>
+
+                    <sublayer
+                            id = "5"
+                            title = "Зоны обслуживания организаций и учреждений"
+                            visible = "true">
+
+                        <popup
+                                title = "&lt;p&gt;Зоны обслуживания организаций и учреждений&lt;/p&gt;">
+
+                            <fields>
+                                <field
+                                        label = "Наименование"
+                                        name = "Name"
+                                />
+
+                                <field
+                                        label = "Основание"
+                                        name = "Osnov"
+                                />
+
+                                <field
+                                        label = "Документ-основание"
+                                        name = "document"
+                                />
+
+                                <field
+                                        label = "Расчетная площадь, кв. м."
+                                        name = "S_ras"
+                                />
+
+                            </fields>
+                        </popup>
+
+                    </sublayer>
+
+                    <sublayer
+                            id = "6"
+                            title = "Площадные объекты обслуживания"
+                            visible = "true">
+
+                        <popup
+                                title = "&lt;p&gt;Площадные объекты обслуживания&lt;/p&gt;">
+
+                            <fields>
+                                <field
+                                        label = "Наименование"
+                                        name = "Name_ob"
+                                />
+
+                                <field
+                                        label = "Обслуживающая организация"
+                                        name = "organiz"
+                                />
+
+                                <field
+                                        label = "Расчетная площадь, кв. м."
+                                        name = "S_расч"
+                                />
+
+                            </fields>
+                        </popup>
+
+                    </sublayer>
+
+                    <sublayer
+                            id = "7"
+                            title = "Полигональные коммуникации"
+                            visible = "true">
+
+                        <popup
+                                title = "&lt;p&gt;Полигональные коммуникации&lt;/p&gt;">
+
+                            <fields>
+                                <field
+                                        label = "Тип коммуникации*"
+                                        name = "Layer"
+                                />
+
+                                <field
+                                        label = "Наименование*"
+                                        name = "Name"
+                                />
+
+                                <field
+                                        label = "Инвентарный номер*"
+                                        name = "Inv_number"
+                                />
+
+                                <field
+                                        label = "Материал*"
+                                        name = "Material"
+                                />
+
+                                <field
+                                        label = "Описание*"
+                                        name = "Remark"
+                                />
+
+                                <field
+                                        label = "&lt;br&gt;&lt;br&gt;&lt;em style='color:black;'&gt;*по данным Реестра характеристик недвижимого имущества Республики Беларусь &lt;em&gt;
+										&lt;a target='_blank' href='https://rh.nca.by/signin.html'&gt; (rh.nca.by)&lt;/a&gt;"
+                                        name = "не существует"
+                                />
+
+                            </fields>
+                        </popup>
+
+                    </sublayer>
+
+                    <sublayer
+                            id = "8"
+                            title = "Ограждения"
+                            visible = "true">
+
+                        <popup
+                                title = "&lt;p&gt;Ограждения&lt;/p&gt;">
+
+                            <fields>
+                                <field
+                                        label = "Наименование*"
+                                        name = "name"
+                                />
+
+                                <field
+                                        label = "Инвентарный номер*"
+                                        name = "Inv_number"
+                                />
+
+                                <field
+                                        label = "Собственник*"
+                                        name = "Owner"
+                                />
+
+                                <field
+                                        label = "Материал*"
+                                        name = "Material"
+                                />
+
+                                <field
+                                        label = "Длина, м*"
+                                        name = "Length"
+                                />
+
+                                <field
+                                        label = "&lt;br&gt;&lt;br&gt;&lt;em style='color:black;'&gt;*по данным Реестра характеристик недвижимого имущества Республики Беларусь &lt;em&gt;
+										&lt;a target='_blank' href='https://rh.nca.by/signin.html'&gt; (rh.nca.by)&lt;/a&gt;"
+                                        name = "не существует"
+                                />
+
+                            </fields>
+                        </popup>
+
+                    </sublayer>
+
+                    <sublayer
+                            id = "9"
+                            title = "Здания и сооружения"
+                            visible = "true">
+
+                        <popup
+                                title = "&lt;p&gt;Здания и сооружения&lt;/p&gt;">
+
+                            <fields>
+                                <field
+                                        label = "Вид объекта*"
+                                        name = "Build_Elem"
+                                />
+
+                                <field
+                                        label = "Наименование*"
+                                        name = "Name"
+                                />
+
+                                <field
+                                        label = "Инвентарный номер*"
+                                        name = "Inv_number"
+                                />
+
+                                <field
+                                        label = "Собственник*"
+                                        name = "Owner"
+                                />
+
+                                <field
+                                        label = "Материал*"
+                                        name = "Material"
+                                />
+
+                                <field
+                                        label = "Год постройки*"
+                                        name = "Year_const"
+                                />
+
+                                <field
+                                        label = "&lt;br&gt;&lt;br&gt;&lt;em style='color:black;'&gt;*по данным Реестра характеристик недвижимого имущества Республики Беларусь &lt;em&gt;
+										&lt;a target='_blank' href='https://rh.nca.by/signin.html'&gt; (rh.nca.by)&lt;/a&gt;"
+                                        name = "не существует"
+                                />
+
+                            </fields>
+                        </popup>
+
+                    </sublayer>
+
+                    <sublayer
+                            id = "10"
+                            title = "Граница пилотной территории"
+                            visible = "false">
+
+                        <popup
+                                title = "&lt;p&gt;Граница пилотной территории&lt;/p&gt;">
+
+                        </popup>
+                    </sublayer>
+
+                </sublayers>
+            </layer>
+
+			<layer
+					type = "dynamic"
+					id = "23"
+					title = "Избирательные округа по выборам&lt;br&gt;депутатов Палаты представителей"
+					url = "http://arcgisserver:8399/arcgis/rest/services/Isbiratel_okruga/MapServer"
+					visible = "false"
+					toc  = "true"
+					tocSlider = "true"
+					opacity  = "1.0"
+					token = ""
+					maxScale  = "14"
+					dateFilter = "true">
+
+				<sublayers>
+					<sublayer
+							id = "1"
+							title = "Границы избирательных округов"
+							visible = "true">
+
+						<popup
+								title = "Избирательные округа по выборам депутатов Палаты представителей
+							&lt;br&gt;&lt;br&gt;&lt;em style='color:grey;'&gt;Дополнительную информацию можно получить на &lt;em&gt;
+							&lt;a target='_blank' href='http://rec.gov.by/ru/vybory-2019'&gt; сайте&lt;/a&gt;&lt;/p&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;">
+
+							<fields>
+								<field
+										label = "Наименование округа"
+										name = "Name"
+								/>
+
+								<field
+										label = "Документ-основание"
+										name = "Decree"
+								/>
+
+								<field
+										label = "Текстовое описание округа"
+										name = "Decript"
+								/>
+
+								<field
+										label = "Избранный депутат"
+										name = "Deputy"
+								/>
+
+							</fields>
+						</popup>
+
+					</sublayer>
+
+					<sublayer
+							id = "0"
+							title = "Окружные избирательные комиссии"
+							visible = "true">
+
+						<popup
+								title = "Окружные избирательные комиссии
+								&lt;br&gt;&lt;br&gt;&lt;em style='color:grey;'&gt;Дополнительную информацию можно получить на &lt;em&gt;
+								&lt;a target='_blank' href='http://rec.gov.by/ru/vybory-2019'&gt; сайте&lt;/a&gt;&lt;/p&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;">
+							<fields>
+
+								<field
+										label = "Наименование округа"
+										name = "Name"
+								/>
+
+								<field
+										label = "Адрес окружной избирательной комиссии"
+										name = "Address"
+								/>
+
+								<field
+										label = "Телефон окружной избирательной комиссии"
+										name = "Phone_Num"
+								/>
+
+								<field
+										label = "Текстовое описание округа"
+										name = "describe"
+								/>
+
+							</fields>
+						</popup>
+
+					</sublayer>
+				</sublayers>
+			</layer>
+
+
+        </mapLayers>
+    </map>
+</configuration>
